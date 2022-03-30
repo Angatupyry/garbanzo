@@ -1,0 +1,30 @@
+*  {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+                "header aside"
+                "nav nav";
+    min-height: 100vh;
+}
+
+header {
+    display: grid;
+    grid-area: header;
+}
+
+aside {
+    display: grid;
+    grid-area: aside;
+}
+
+nav {
+    display: grid;
+    grid-area: nav;
+}

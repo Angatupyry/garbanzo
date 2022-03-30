@@ -1,0 +1,55 @@
+<!-- Github
+Resumen
+Repositorio -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li></li>
+                <li></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+         <!-- El form sirve para crear un formulario -->
+         <form> 
+            <label for="nombre">
+                <!-- La etiqueta span funciona como... -->
+                <span>¿Cuál es tu nombre?</span>
+                <input type="text" name="nombre" id="nombre" required>
+            </label>
+            <label for="correo">
+                <span>Tu correo</span>
+                <input type="email" name="correo" id="correo">
+            </label>
+            <label for="calendario">
+                <input type="datetime-local" value="calendario">
+            </label>
+            <select>
+                <option value="Fútbol">Fútbol</option>
+                <option value="Rugby">Rugby</option>
+                <option value="Rugby">Tenis</option>
+            </select>
+            <input list="cursos">
+            <datalist id="cursos">
+                <option value="FullStack">FullStack</option>
+                <option value="Marketing"></option>
+                <option value="Ciencia de datos"></option>
+            </datalist>
+            <input type="submit">
+        </form>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>

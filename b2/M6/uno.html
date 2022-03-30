@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .contenedor {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            min-height: 100vh;
+            background-color: blue;
+        }
+
+        .elemento {
+            background-color: black;
+            /* 2  en column */
+            /* 3 / span 4 */
+            grid-row: 3;
+            grid-column: 2 / span 3;
+        }
+
+    </style>
+</head>
+<body>
+    <main class="contenedor">
+        <div class="elemento"> Hola</div>
+    </main>
+</body>
+</html>

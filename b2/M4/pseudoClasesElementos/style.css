@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-nav {
+    margin-top: 10px;
+    list-style: none;
+    background-color: saddlebrown
+}
+
+.main-nav__item {
+    display: inline-block;
+}
+
+.main-nav__item a {
+    color:white;
+    padding: 5px;
+    border-radius: 10px;
+    text-decoration: none;
+    background-color:seagreen;
+}
+
+.main-nav__item a:hover{
+    color:blue;
+}
+
+.main-nav__item a::after{
+    content: '|';
+}
+
+p::selection {
+    color:blue;
+    background: black;
+}
+
+
+p {
+    border: 5px solid red;
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <!-- Si el usuario es menor de 18 años, le saldrá, debajo de su nombre completo y año de nacimiento, 
+        el mensaje: “Eres menor de edad, no podemos darte de alta hasta el año XXXX” 
+    
+    Si es mayor de 18 años y menor que 25, le saldrá el mensaje: “Tienes un 10 % de descuento”
+    Si es mayor de 25 años le saldrá el mensaje: “Lo sentimos, pero no tienes descuento”
+    Si tiene justo 18 o 25 años le saldrá el mensaje: “Premio, tienes un descuento especial del 20 %”
+    Si introduce mal la edad (registra por ejemplo la edad en palabras en vez de números):
+    Saldrá un mensaje: “Hay un error no hemos podido calcular tu edad”
+    En el año de nacimiento saldrá: “no puede calcularse” -->
+    <H1>Esto es Javascript</H1>
+    <script>
+        // const nombre = 'Cosme Fulanito';
+        // const edad = 18;
+        // const anhoNacimiento = 2022 - edad;
+        // if (edad < 18) {
+        //     const anhoMayorEdad = anhoNacimiento + 18;
+        //     console.log(`Eres menor de edad, no podemos darte de alta hasta el año ${anhoMayorEdad}`)
+        // } else if (edad > 18 && edad < 25) {
+        //     console.log("Tienes un 10 % de descuento")
+        // }
+        //  else if (edad > 25) {
+        //     console.log("Lo sentimos, pero no tienes descuento")
+        // } else if (edad === 18 || edad === 25) {
+        //     console.log("Premio, tienes un descuento especial del 20 %")
+        // }
+
+        //  Arrays
+        //  Loops
+        //  Objetos
+        // 1 Cuadrante  x > 0 e y > 0
+        // 2 Cuadrante  x < 0 e y > 0
+        // 3 Cuadrante  x > 0 e y < 0
+        // 4 Cuadrante  x < 0 e y < 0
+
+        /*
+            ¿Qué tengo que hacer?
+                :D Introducidos valores por teclado
+                :D Asignar variables a los datos ingresados
+                :D Comparar valores para saber en qué cuadrante están los valores ingresados.
+                :D Mostrar en pantalla.
+                :D Tomar agua.
+        */
+
+        // const coordenadaX = parseInt(prompt("Ingrese el valor de X"));
+        // const coordenadaY = parseInt(prompt("Ingrese el valor de Y"));
+
+        // if(coordenadaX > 0 && coordenadaY > 0) {
+        //     console.log("Primer cuadrante")
+        // } else if (coordenadaX < 0 && coordenadaY > 0){
+        //     console.log("Segundo cuadrante")
+        // } else if (coordenadaX > 0 && coordenadaY < 0){
+        //     console.log("Tercer cuadrante")
+        // } else if (coordenadaX < 0 && coordenadaY < 0){
+        //     console.log("Cuarto cuadrante")
+        // }
+
+        const edades = [18, 15, 25, 90];
+        
+
+        for(let i = 0; i < edades.length; i++){
+            if(edades[i] > 18) {
+                console.log(`Es mayor de edad, 
+                haga lo que quiera porque su edad 
+                es ${edades[i]} Con índice ${i}`)
+            } else {
+                console.log(`No beba porque su
+                 edad es ${edades[i]}. Con índice ${i}`)
+            }
+        }
+
+        const numeros = [1, 2, 3, 4, 5];
+        i = 0
+        for(let i = 0; i< numeros.length; i++){
+            if(i >= numeros.length - 2 || i === numeros.length -1){
+                suma = suma + numeros[i]
+            }
+        }
+        
+
+    </script>
+</body>
+
+</html>

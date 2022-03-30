@@ -1,0 +1,102 @@
+:root {
+    --azul: #264653;
+    --verde: #2a9d8f;
+    --amarillo: #e9c46a;
+    --naranja: #f4a261;
+    --rojo: #e76f51;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+
+body {
+    display: grid;
+    grid-template-columns: 7fr 3fr;
+    grid-template-rows: 1fr 9fr;
+    grid-template-areas:
+      "nav nav"
+      "header aside";
+    height: 100vh;
+    color: white;
+}
+
+
+header {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-color: var(--azul);
+    grid-area: header;
+    font-family: "Pattaya", sans-serif;
+}
+  
+  aside {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    background-color: var(--rojo);
+    grid-area: aside;
+    padding: 2rem;
+  }
+  
+  nav {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-left: 30vw;
+    padding-right: 30vw;
+    background-color: var(--verde);
+    grid-area: nav;
+  }
+  
+  img {
+    width: 60%;
+    margin-bottom: 4rem;
+  }
+  
+  .parrafo {
+    padding: 1rem 0;
+  }
+  
+  form {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 5vh;
+    width: 100%;
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 5.8rem;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+  }
+  
+  h3 {
+    font-size: 2.0rem;
+  }
+  
+  input {
+    border: 0;
+  }
+  
+  button {
+    background-color: var(--amarillo);
+    border: 0;
+  }
+  
+  p {
+    font-size: 1.6rem;
+  }

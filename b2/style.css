@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 20vh 50vh 30vh;
+  }
+  
+  header {
+    display: grid;
+    grid-template-columns: 150px auto;
+    background-color: coral;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    margin-right: 100px;
+  }
+  
+  main {
+    display: grid;
+    background-color: blueviolet;
+    align-items: center;
+  }
+  
+  footer {
+    display: grid;
+    background-color: yellowgreen;
+    align-items: center;
+  }
+  
+  img {
+    margin-left: 20px;
+    width: 100px;
+  }

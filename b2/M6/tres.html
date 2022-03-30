@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Media - Ejemplo II</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      main {
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        grid-template-rows: 1fr 2fr 2fr 1fr;
+        grid-template-areas:
+          "header header"
+          "article aside"
+          "section aside"
+          "footer footer";
+      }
+
+      header {
+        background-color: green;
+        grid-area: header;
+      }
+
+      article {
+        background-color: darkcyan;
+        grid-area: article;
+      }
+
+      section {
+        background-color: orangered;
+        grid-area: section;
+      }
+
+      aside {
+        background-color: orange;
+        grid-area: aside;
+      }
+
+      footer {
+        background-color: blueviolet;
+        grid-area: footer;
+      }
+
+    </style>
+  </head>
+  <body>
+    <main>
+      <header></header>
+      <article></article>
+      <section></section>
+      <aside></aside>
+      <footer></footer>
+    </main>
+  </body>
+</html>

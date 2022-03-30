@@ -1,0 +1,17 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+  }
+  
+html {
+      font-size: 62.5%;
+}
+
+.text-container {
+    font-size: 1.5rem;
+}
+
+.text-container div {
+    font-size: 5.5rem;
+}
