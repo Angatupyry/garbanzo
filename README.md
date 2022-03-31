@@ -3,5 +3,3 @@
 Comandos básicos de git.
 
 Esto es otro cambio
-
-cambio
