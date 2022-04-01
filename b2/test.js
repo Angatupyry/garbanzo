@@ -1,22 +1,30 @@
-const persona = {
-  nombre: "César",
-  apellido: "Rolón",
-  edad: 90,
-  tomaTerere: true,
-};
-
-console.log(persona.nombre);
-console.log(persona.edad);
-
-if (persona.tomaTerere) {
-  console.log("Comprar mucha yerba");
+function saludar() {
+  // La variable nombre es una variable local creada por iniciar.
+  let nombre = "¡Hola!";
+  // La función mostrarNombre es una función interna, una clausura.
+  function mostrarSaludo() {
+    // Usa una variable declarada en la función externa.
+    console.log(nombre);
+  }
+  mostrarSaludo();
 }
 
-const estudiantes = [
-  {
-    nombre: "César",
-    apellido: "Rolón",
-  },
-  { nombre: "César", apellido: "Rolón" },
-  { nombre: "César", apellido: "Rolón" },
-];
+saludar();
+
+function saludar() {
+  const saludo = "Hola";
+  console.log(saludo);
+}
+
+saludar(); // Hola
+console.log(saludo); // saludo is not defined
+
+const saludar = "hola";
+
+function saludo() {
+  console.log("Función interna");
+  console.log(saludar);
+}
+saludo();
+
+console.log(saludar);

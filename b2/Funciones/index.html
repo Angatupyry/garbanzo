@@ -74,44 +74,81 @@
 
 
 
-        function diferencia (n) {
-            if(n <=13) {
-                return 13 - n
-            }  
+        // function diferencia (n) {
+        //     if(n <=13) {
+        //         return 13 - n
+        //     }  
 
-            return (n - 13) * 2
+        //     return (n - 13) * 2
+        // }
+
+
+
+
+
+        // function multiplicar(a, b) {
+        //     return a * b
+        // }
+
+        // console.log(multiplicar(2, 3))
+
+        // const multi = (a, b) => a * b
+
+
+
+        // const diferenciaFlecha = (n) => {
+        //     if(n <=13) {
+        //         return 13 - n
+        //     }  
+
+        //     return (n - 13) * 2
+        // }
+
+        // console.log(diferenciaFlecha(15))
+        // console.log(diferenciaFlecha(11))
+        // console.log(diferenciaFlecha(110))
+
+
+        const objeto = {
+            propiedaUno: "algo",
+            propiedadDos: 12,
+            propiedadTres: true
         }
 
-        // console.log(diferencia(15))
-        // console.log(diferencia(11))
-        // console.log(diferencia(110))
+
+        // const buildObject = (name, color, peso, tamanho) => {
+        //     const objeto = {
+        //         name: name,
+        //         color: color,
+        //         peso: peso,
+        //         tamanho: tamanho,
+        //     }
+
+        //     return objeto;
+        // }
+
+        // console.log(buildObject("celular","rojo", 5, "mediano"));
+        // console.log(buildObject("mouse", "negro", 2, "grande"));
 
 
 
-        function multiplicar(a, b) {
-            return a * b
+        const buildPerson = (nombre, apellido) => {
+            const persona = {
+                nombre: nombre, 
+                apellido: apellido,
+            }
+
+            return persona
         }
 
-        console.log(multiplicar(2, 3))
 
-        const multi = (a, b) => a * b
+        const personas = [];
+        const cesar = buildPerson('César', 'Rolón')
+        const nati = buildPerson('Nati', 'Ciraolo')
 
-
-
-        const diferenciaFlecha = (n) => {
-            if(n <=13) {
-                return 13 - n
-            }  
-
-            return (n - 13) * 2
-        }
-
-        console.log(diferenciaFlecha(15))
-        console.log(diferenciaFlecha(11))
-        console.log(diferenciaFlecha(110))
-
-
-
+        personas.push(cesar)
+        personas.push(nati)
+        console.log(personas)
     </script>
 </body>
 
