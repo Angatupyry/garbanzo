@@ -149,7 +149,80 @@
         personas.push(cesar)
         personas.push(nati)
         console.log(personas)
+
+        const array = [2, 3, 5, 'César']
+        const persona = {
+            nombre: "NombrePersona",
+            apellido: "ApellidoPersona"
+        }
+
+        const arrayPersonas = [
+            {
+                nombre: "NombrePersona",
+                apellido: "ApellidoPersona"
+            },
+            {
+                nombre: "NombrePersona1",
+                apellido: "ApellidoPersona1"
+            }, 
+            {
+                nombre: "NombrePersona2",
+                apellido: "ApellidoPersona2"
+            }
+        ]
+
+        const productos = [{
+            nombre: "Pan", 
+            precio: 4,
+            imagen: "url"
+        }, {
+            nombre: "Anillo de oro", 
+            precio: 5,
+            imagen: "url"
+        }]
+
+        for (let index = 0; index < arrayPersonas.length; index++) {
+            
+            console.log(arrayPersonas[index].nombre)
+        }
+
+
+
+
+    // const solicitarDatosDeTriangulo =()=> { 
+    //     const h = prompt("Ingrese la altura");
+    //     const b = prompt("Ingrese la base");
+    //     const datosTriangualo= {
+    //         altura: h, 
+    //         base: b
+    //     }
+
+    //     return datosTriangualo
+    // }
+    const obtenerAreaTriangulo = (h, b) => (b * h) / 2
+
+    const h = parseInt(prompt("Ingrese la altura"));
+    const b = parseInt(prompt("Ingrese la base"));
+
+    
+
+    console.log(obtenerAreaTriangulo(h, b))
+
+
+
+
+
+    
+
+
+
+
+
+
+
     </script>
+
+    
 </body>
 
 </html>
