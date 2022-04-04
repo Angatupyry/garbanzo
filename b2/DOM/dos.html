@@ -17,6 +17,7 @@
     const main = document.getElementById("page-main");
     const input = document.getElementById("text-input");
     const addButton = document.getElementById("add-button");
+    const removeButton = document.getElementById("reset-button")
    
     const agregarParrafoAlMain = () => {
 
@@ -31,7 +32,20 @@
     }
     
 
-    addButton.addEventListener("click", agregarParrafoAlMain)
+    const eliminarParrafoDelMain = () => {
+        /*
+         1 Investigar propiedades
+         2 Remover solo el último párrafo y no todos los elementos de main
+        */
+        while (main.firstChild) {
+            main.removeChild(main.lastChild);
+        }
+        // main.textContent = "";
+    }
+    
+
+    addButton.addEventListener("click", agregarParrafoAlMain);
+    removeButton.addEventListener("click", eliminarParrafoDelMain);
     
 </script>
 </html>
