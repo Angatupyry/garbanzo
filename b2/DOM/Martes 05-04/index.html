@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejemplo - Listar productos</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+      }
+
+      header {
+        height: 5rem;
+        background-color: green;
+        color: white;
+        padding: 1rem;
+        font-size: larger;
+      }
+
+      main {
+        background-color: crimson;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-auto-rows: 1fr;
+        gap: 1rem;
+        padding: 1rem;
+      }
+
+      .producto {
+        background-color: deepskyblue;
+        display: flex;
+        flex-direction: column;
+        padding: 0.3rem;
+        gap: 0.5rem;
+      }
+
+      .producto > img {
+        width: 100%;
+
+        align-self: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header><h1>LISTA DE PRODUCTOS</h1></header>
+    <main id="main">
+        
+
+    </main>
+    <script>
+        const productos = [
+        {
+          nombre: "Limones",
+          precio: 60,
+          link: "https://images.unsplash.com/photo-1622754311409-e3419609d816?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80",
+          disponible: false,
+        },
+        {
+          nombre: "Late",
+          precio: 250,
+          link: "https://images.unsplash.com/photo-1617590590964-2acb6414a31d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80",
+          disponible: false,
+        },
+        {
+          nombre: "Pasta",
+          precio: 300,
+          link: "https://images.unsplash.com/photo-1628079251261-624e723b7326?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=975&q=80",
+          disponible: false,
+        },
+        {
+          nombre: "Cereales",
+          precio: 120,
+          link: "https://images.unsplash.com/photo-1628132232967-fb1807288edd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+          disponible: false,
+        },
+        {
+          nombre: "Jugo",
+          precio: 80,
+          link: "https://images.unsplash.com/photo-1628134187787-51c21f177a6a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80",
+          disponible: true,
+        },
+        {
+          nombre: "Donas",
+          precio: 280,
+          link: "https://images.unsplash.com/photo-1626379801357-537572de4ad6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=975&q=80",
+          disponible: false,
+        },
+        {
+          nombre: "Cerveza",
+          precio: 250,
+          link: "https://images.unsplash.com/photo-1627772329965-8ec1de188eeb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80",
+          disponible: true,
+        },
+        {
+          nombre: "Pan",
+          precio: 70,
+          link: "https://images.unsplash.com/photo-1618194696448-c21afdbb90be?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80",
+          disponible: true,
+        },
+        {
+          nombre: "Waffles",
+          precio: 300,
+          link: "https://images.unsplash.com/photo-1598578273254-cf2b91351d56?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
+          menores: true,
+        },
+      ];
+
+      const main = document.getElementById("main");
+    
+      const createAndAddElement = (producto) => {
+        const contenedor = document.createElement("div");
+        const nombreProducto = document.createElement("h2");       
+        const imagenProducto = document.createElement("img"); 
+        const precioProducto = document.createElement("p");
+
+
+        contenedor.appendChild(nombreProducto);
+        contenedor.appendChild(imagenProducto);
+        contenedor.appendChild(precioProducto);
+
+        contenedor.classList.add("producto");
+        nombreProducto.textContent = producto.nombre
+
+        imagenProducto.setAttribute("src", producto.link)
+        imagenProducto.setAttribute("alt", producto.nombre)
+
+        precioProducto.textContent = `Por tan solo: $${producto.precio}`
+
+        main.appendChild(contenedor)
+
+      }
+
+      for (let i = 0; i < productos.length; i++) {
+          createAndAddElement(productos[i])
+      }
+
+
+    </script>
+  </body>
+</html>
