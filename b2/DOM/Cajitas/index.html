@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+    <div class="title">
+        <h1>Ejercicios de DOM y eventos</h1>
+
+        <p>Variados :)</p>
+    </div>
+
+    <div class="box">
+        <div>
+            <h3 class="box-title">Ejercicio 1: "seleccionar" la caja vía id</h3>
+            <div>
+                <p>En la consola, trata de seleccionar la cajita utilizando <b>document.getElementById</b> y guardala en una variable</p>
+                <p> 🔎 Pueden buscar el id de la cajita desde DevTools.</p>
+                <p> ✅ Para corregir: escriban <b>pintarCajitas(variable)</b> en la consola. Se debería pintar de azul.</p>
+                <p>Más información: <a href="https://developer.mozilla.org/es/docs/Web/API/Document/getElementById">MDN</a></p>
+            </div>
+            <div class="test-box" id="cajita-1"></div>
+        </div>
+    </div>
+
+    <div class="box">
+        <div>
+            <h3 class="box-title">Ejercicio 2: "seleccionar" las cajas vía clase y pintar la segunda</h3>
+            <div>
+                <p>🧷 La función <b>document.getElementsByClassName</b> nos permite seleccionar todos los elementos que tengan cierta clase CSS, por ejemplo: <b>document.getElementsByClassName('ej-2')</b></p>
+                <p>En la consola, trata de seleccionar las cajitas utilizando <b>document.getElementsByClassName</b> con la clase "ej-2". Guarden el resultado en una variable.</p>
+                <p> ❓ ¿Qué pasa si escribimos <b>variable[0]</b> o <b>variable[1]</b> en la consola? (cambien variable por el nombre que eligieron para guardar los elementos!)</p>
+                <p> ❗ La variable guarda todos los elementos encontrados con la misma clase en una especie de array. En este caso hay dos cajitas.</p>
+                <p> ✅ Para pintar la segunda: escriban <b>pintarCajitas(variable[1])</b> en la consola. Se debería pintar sólamente la segunda.</p>
+                <p>Más información: <a href="https://developer.mozilla.org/es/docs/Web/API/Document/getElementsByClassName">MDN</a></p>
+            </div>
+            <div class="test-box ej-2"></div>
+            <div class="test-box ej-2"></div>
+        </div>
+    </div>
+    
+    <div class="box">
+        <div>
+            <h3 class="box-title">Ejercicio 3: "seleccionar" cajitas como si fuera CSS</h3>
+            <div>
+                <p>🧷 La función <b>document.querySelector</b> nos permite utilizar selectores CSS para seleccionar elementos, por ejemplo: <b>document.querySelector('.text-box')</b></p>
+                <p>🧷 Esta función nos devuelve el primer elemento que hace match con el selector. Podemos también utilizar <b>document.querySelectorAll</b> para traer una lista con todos los matches.</p>
+                <p>🧷 En CSS, existía un pseudo-selector llamado <b>:nth-child()</b>, el cual nos permitía seleccionar un enésimo elemento</p>
+                
+                <p>En la consola, selecciona las cajitas utilizando <b>document.querySelector('.ej-3:nth-child(n)')</b> donde <b>n</b> es el número de cajita que quieren seleccionar: prueben varias! </p>
+                <p> ❗ Podemos utilizar todo lo aprendido de CSS para seleccionar elementos: si lo podemos pintar lo podemos tomar desde JavaScript.</p>
+                <p>Más información: <a href="https://developer.mozilla.org/es/docs/Web/API/Document/querySelector">MDN</a></p>
+            </div>
+            <div class="hermanos">
+                <div class="test-box ej-3"></div>
+                <div class="test-box ej-3"></div>
+                <div class="test-box ej-3"></div>
+                <div class="test-box ej-3"></div>
+                <div class="test-box ej-3"></div>
+                <div class="test-box ej-3"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="box">
+        <div>
+            <h3 class="box-title">❔❔❔❔ ¿Siempre hay que poner <b>document</b> para seleccionar elementos?</h3>
+            <div>
+                <p>👉 ¡No! podemos ejecutar estas funciones a partir de cualquier elemento del documento</b></p>
+                <p>👉 Por ejemplo, si creamos una variable llamada <b>contenedor</b> y guardamos en ella un div con varios elementos internos, podríamos hacer <b>contenedor.querySelector()</b> y reducir nuestra búsqueda a elementos internos a <b>contenedor</b> </p>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="box">
+        <div>
+            <h3 class="box-title">Ejercicio 4: crear nuestra propia cajita!</h3>
+            <div>
+                <p>🧷 La función <b>document.createElement</b> nos permite crear elementos, solo tenemos que decirle cuál, por ejemplo: <b>document.createElement('div')</b> crearía un <b>div</b>.</p>
+                <p>🧷 Esta función devuelve el elemento creado, pero no lo coloca en la página, por eso puede ser importante guardarlo en una variable para mantener una referencia.</p>
+                <p>🧷 Una vez creada la cajita, podemos agregarle clases utilizando <b>classList.add()</b></p>
+                <p>🧷 Por otro lado, la función <b>document.appendChild</b> nos permite adjuntar un elemento al documento, o a cualquier otro elemento HTML.</p>
+                <br>
+                <h4>Instrucciones: </h4>
+                <p>👉 Crea una variable llamada <b>contenedor</b> cuyo valor sea igual a <b>document.querySelector('.contenedor-cajitas')</b>. Eso te debería ayudar a seleccionar el contenedor de la cajita verde que está abajo.</p>
+                <p>👉 Crea una variable llamada cajita, cuyo valor sea un nuevo <b>div</b></p>
+                <p>👉 Agrégale la clase <b>test-box</b> a la variable cajita utilizando <b>cajita.classList.add('test-box')</b></p>
+                <p>👉 Adjunta cajita al contenedor utilizando <b>contenedor.appendChild(cajita)</b></p>
+                <p> ❓ ¿Qué pasa si volvemos a ejecutar <b>contenedor.appendChild(cajita)</b>?.</p>
+                <p> ❓ ¿Qué pasa si tratamos de adjuntar <b>cajita</b> a otro elemento?</p>
+                <p> ❗ Cajita es un único div, no puede estar en más de un lugar a la vez</p>
+                <p>Más información: <a href="https://developer.mozilla.org/es/docs/Web/API/Document/createElement">createElement()</a>, <a href="https://developer.mozilla.org/es/docs/Web/API/Element/classList">classList</a>, <a href="https://developer.mozilla.org/es/docs/Web/API/Node/appendChild">appendChild()</a> </p>
+            </div>
+            <div class="contenedor-cajitas hermanos">
+                <div class="test-box"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="box">
+        <div>
+            <h3 class="box-title">Ejercicio 5: modificar los estilos de la cajita, con JavaScript!</h3>
+            <div>
+                <p>🧷 Para cualquier elemento interno del HTML, podemos acceder al objeto style.</p>
+                <p>🧷 Pueden seleccionar la cajita de abajo con <b>document.getElementById('ej-5')</b> y probar en consola agregarle <b>.style</b> para ver el listado de propiedades.</p>
+                <p>🧷 Si podemos acceder al objeto de propiedades, entonces podemos cambiarlo! Por ejemplo <b>cajita.style.background = 'red'</b> cambiaría el fondo de verde a rojo.</b></p>
+                <p>🧷 Por otro lado, la función <b>document.appendChild</b> nos permite adjuntar un elemento al documento, o a cualquier otro elemento HTML.</p>
+                <br>
+                <h4>Instrucciones: </h4>
+                <p>👉 Selecciona la cajita y guardala en una variable con cualquier nombre.</p>
+                <p>👉 Cambia algún valor CSS de la cajita, por ejemplo el borde o el color de fondo</p>
+                <p>🧷 <b>Nota:</b> las propiedades con guíon (ej: border-radius) cambian de nombre a su versión <a href="https://es.wikipedia.org/wiki/Camel_case">camel case</a>, por lo que "border-radius" pasaría a ser "borderRadius" y "background-color" sería "backgroundColor"</p>
+                <p>🧷 <b>Nota:</b> es importante recordar las comillas en el valor (ej: '20px')</p>
+                
+                <p>Más información: <a href="https://developer.mozilla.org/es/docs/Web/API/HTMLElement/style">MDN</a></p>
+            </div>
+            <div class="hermanos">
+                <div id="ej-5" class="test-box"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="box">
+        <div>
+            <h3 class="box-title">Ejercicio 6: destruir la cajita malvada!</h3>
+            <div>
+                <p>🧷 Podemos ejecutar la función <b>.remove()</b> en un elemento para aniquilarlo.</p>
+                <p>🧷 Esta función no elimina el elemento de la faz de la tierra, simplemente lo saca del HTML, pero sigue quedando en la memoria de la máquina. Esto significa que podríamos volver a agregarlo con <b>appendChild()</b>.</p>
+                <br>
+                <h4>Instrucciones: </h4>
+                <p>👉 Selecciona la cajita roja y guárdala en una variable.</p>
+                <p>👉 Llama a la función <b>remove</b> en la cajita, por ejemplo: <b>cajaRoja.remove()</b></p>
+                <p>👉 Resulta que la cajita no era tan malvada 👀, vuelve a agregarla al contenedor de donde salió (van a tener que seleccionar el contenedor)</p>
+                <p>👉 Utiliza la función pintarCajitas(cajaRoja) para sacarle la maldad</p>
+                <p>Más información: <a href="https://developer.mozilla.org/es/docs/Web/API/ChildNode/remove">MDN</a></p>
+            </div>
+            <div id="contenedor-ej-6" class="hermanos">
+                <div class="test-box"></div>
+                <div class="test-box bad-box"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="box">
+        <div>
+            <h3 class="box-title">Ejercicio 7: calma a la cajita!</h3>
+            <div>
+                <p>🧷 Podemos ejecutar código cuando ocurre algún evento en particular, por ejemplo cuando hacemos click.</p>
+                <p>🧷 La forma de escribir un listener es la siguiente: <b>elemento.addEventListener('nombre-evento', function() { código a ejecutar })</b> donde <b>elemento</b> es cualquier elemento interno del HTML.</p>
+                <br>
+                <h4>Instrucciones: </h4>
+                <p>👉 Selecciona la cajita movediza y guárdala en una variable.</p>
+                <p>👉 Agregale un event listener para el evento <b>'click'</b> y dentro de la función, agregale la clase <b>'calm-box'</b> a la caja</p>
+                <p>Más información: <a href="https://developer.mozilla.org/es/docs/Web/API/EventTarget/addEventListener">MDN</a></p>
+            </div>
+            <div class="hermanos">
+                <div class="test-box moving-box"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="box">
+        <div>
+            <h3 class="box-title">Ejercicio 8: que crezca la cajita!</h3>
+            <div>
+                <p>🧷 La función que le pasamos al event listener puede ser creada en la misma declaración (como en el ejercicio anterior) o puede ser una ya existente.</p>
+                <p>🧷 En este ejercicio, existe una función llamada <b>agrandarCajita()</b> a la cual le podemos pasar una cajita para hacerla crecer de a 10 píxeles cada vez que se ejecute.</p>
+                <br>
+                <h4>Instrucciones: </h4>
+                <p>👉 Selecciona la cajita verde y guárdala en una variable.</p>
+                <p>👉 Agregale un event listener para el evento <b>'click'</b> y en lugar de crear una función nueva, pasa como segundo parámetro <b>agrandarCajita</b> (sin paréntesis ni variable)</p>
+                <p>👉 Si le dan click a la cajita, se va a agrandar! Traten de que sea tan grande como el borde punteado.</p>
+            </div>
+            <div class="dashed-box">
+                <div class="test-box ej-8"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="box">
+        <div>
+            <h3 class="box-title">Ejercicio 9: rotar la cajita!</h3>
+            <div>
+                <p>🧷 En el ejercicio anterior, utilizamos la función <b>agrandarCajita()</b> para agrandar la caja con cada click.</p>
+                <p>🧷 Esta vez, vamos a tener que crear una función que rote la cajita cambiando su propiedad de transform.</p>
+                <br>
+                <h4>Instrucciones: </h4>
+                <p>👉 Selecciona la cajita verde y guárdala en una variable.</p>
+                <p>👉 Agregale un event listener para el evento <b>'click'</b> y en la función, cambien el valor de <b>style.transform</b> de la cajita por <b>'rotate(120deg)'</b></p>
+            </div>
+            <div class="dashed-box rotated-box">
+                <div id="ej-9" class="test-box"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="box">
+        <div>
+            <h3 class="box-title">Ejercicio 10: Escribe en la cajita!</h3>
+            <div>
+                <p>🧷 Cuando seleccionamos un input, podemos acceder a su valor mediante la propiedad <b>.value</b></p>
+                <p>🧷 Esta vez, vamos a tener que crear una función que rote la cajita cambiando su propiedad de transform.</p>
+                <br>
+                <h4>Instrucciones: </h4>
+                <p>👉 Selecciona la cajita verde y guárdala en una variable.</p>
+                <p>👉 Selecciona el botón y guárdalo en una variable.</p>
+                <p>👉 Selecciona el elemento input y guárdalo en una variable.</p>
+                <p>👉 Crea un event listener para el evento click, que al presionar en el botón, cambie el valor de <b>textContent</b> de la <b>cajita</b> por el  <b>value</b> del elemento <b>input</b></p>
+            </div>
+            <div class="text-input-box">
+                <input type="text" placeholder="escribe algo...">
+                <button id="escribir">Escribir en cajita</button>
+            </div>
+                <div id="ej-10" class="test-box"></div>
+        </div>
+    </div>
+
+    <div class="box">
+        <div>
+            <h3 class="box-title">Ejercicio 11: Suma en la cajita</h3>
+            <div>
+                <p>🧷 Si podemos tomar el valor de un input, entonces podemos sumarlos</p>
+                <p>🧷 <b>Nota:</b> usar la función <b>parseFloat(input.value)</b> para transformar el valor de los inputs en números.</p>
+                <br>
+                <h4>Instrucciones: </h4>
+                <p>👉 Selecciona cada input y guárdalo en una variable.</p>
+                <p>👉 Selecciona el botón y guárdalo en una variable.</p>
+                <p>👉 Selecciona la cajita y guárdala en una variable.</p>
+                <p>👉 Crea un event listener para el evento click, que al presionar en el botón, sume el valor actual de los inputs y lo escriba en la cajita.</p>
+            </div>
+            <div class="number-input-box">
+                <input class="primerValor" type="number">
+                <input id="segundoValor" type="number">
+                <button>Sumar en cajita</button>
+            </div>
+                <div id="ej-11" class="test-box"></div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>

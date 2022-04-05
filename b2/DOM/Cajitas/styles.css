@@ -1,0 +1,145 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+html {
+  padding: 10px;
+  background: linear-gradient(290deg, #00c6e3 0%, #4e95f1 50.37%, #9966ff 100%);
+}
+
+body {
+  display: grid;
+  grid-gap: 50px;
+}
+.title {
+  color: whitesmoke;
+  margin: 15px 0;
+}
+
+.box {
+  border: 10px solid rgb(102, 200, 4);
+  border-radius: 8px;
+}
+
+.box > div {
+  display: grid;
+  gap: 25px;
+  background: white;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 8px;
+}
+
+.box > div p {
+  margin-bottom: 10px;
+}
+
+.box .hermanos {
+  display: grid;
+  justify-content: start;
+  gap: 15px;
+  grid-auto-flow: column;
+}
+
+.test-box {
+  width: 70px;
+  height: 70px;
+  border-radius: 8px;
+  background: rgb(102, 200, 4);
+  border: 5px solid green;
+  z-index: 50;
+}
+
+.bad-box {
+  background: red;
+  border: 5px solid darkred;
+}
+
+.moving-box {
+  animation: move 3s infinite;
+}
+
+.calm-box {
+  animation-play-state: paused;
+}
+
+.dashed-box {
+  width: 140px;
+  height: 140px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  justify-items: center;
+  align-content: center;
+}
+
+.dashed-box:after {
+  content: "";
+  border: 3px dashed blue;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+
+.rotated-box:after {
+  transform: rotate(120deg);
+}
+
+.dashed-box .test-box {
+  width: 30px;
+  height: 30px;
+  border: none;
+}
+
+.rotated-box .test-box {
+  width: 100px;
+  height: 100px;
+}
+
+.text-input-box {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  border: 1px solid darkgreen;
+  width: 320px;
+  height: 50px;
+}
+
+.text-input-box input {
+  padding: 5px 8px;
+  border: none;
+}
+
+.text-input-box button {
+  border: none;
+  padding: 5px 8px;
+}
+
+.number-input-box {
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  gap: 10px;
+  height: 50px;
+}
+
+.number-input-box input {
+  padding: 5px 8px;
+  width: 70px;
+}
+
+#ej-10,
+#ej-11 {
+  width: 320px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+@keyframes move {
+  50% {
+    transform: translateX(300px);
+  }
+}
